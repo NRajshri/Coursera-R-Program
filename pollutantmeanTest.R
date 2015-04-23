@@ -23,7 +23,9 @@ pollutantmean <- function(directory, pollutant, id){
   
   combined_file <- data.frame()
   
-  specdata <- list.files(directory, full.names = TRUE )
+#list.files("folder1", full.names = TRUE) : full.names will #append the directory 'folder1' to the current wd.  
+
+   specdata <- list.files(directory, full.names = TRUE )
   
   for (i in 1:25){
     combined_file <- rbind(combined_file, read.csv(specdata[i]))
@@ -33,7 +35,9 @@ pollutantmean <- function(directory, pollutant, id){
   
   y <- combined_file
   
-  
+
+#Create an empty numeric vector where we can store the pollutant values
+    
   readFile <- numeric(0)
   
   for(i in y$ID){
